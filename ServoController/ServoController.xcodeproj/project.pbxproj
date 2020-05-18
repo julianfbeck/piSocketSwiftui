@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57CC894299E47B9F6BB650D5 /* Pods_ServoController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED609F65A8C8A7A75165720 /* Pods_ServoController.framework */; };
+		9A00CFF52472DB1700DA2512 /* StepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00CFF42472DB1700DA2512 /* StepperViewModel.swift */; };
+		9A6E4F312472AC100080642D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E4F302472AC100080642D /* AppDelegate.swift */; };
+		9A6E4F332472AC100080642D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E4F322472AC100080642D /* SceneDelegate.swift */; };
+		9A6E4F352472AC100080642D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E4F342472AC100080642D /* ContentView.swift */; };
+		9A6E4F372472AC120080642D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6E4F362472AC120080642D /* Assets.xcassets */; };
+		9A6E4F3A2472AC120080642D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6E4F392472AC120080642D /* Preview Assets.xcassets */; };
+		9A6E4F3D2472AC120080642D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6E4F3B2472AC120080642D /* LaunchScreen.storyboard */; };
+		9A6E4F462472B19E0080642D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6E4F452472B19E0080642D /* NetworkExtension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5ED609F65A8C8A7A75165720 /* Pods_ServoController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServoController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A00CFF42472DB1700DA2512 /* StepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewModel.swift; sourceTree = "<group>"; };
+		9A6E4F2D2472AC100080642D /* ServoController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServoController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6E4F302472AC100080642D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A6E4F322472AC100080642D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A6E4F342472AC100080642D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9A6E4F362472AC120080642D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A6E4F392472AC120080642D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9A6E4F3C2472AC120080642D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A6E4F3E2472AC120080642D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A6E4F442472B19E0080642D /* ServoController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ServoController.entitlements; sourceTree = "<group>"; };
+		9A6E4F452472B19E0080642D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		AF1C39795F37263A989C8A6B /* Pods-ServoController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServoController.debug.xcconfig"; path = "Target Support Files/Pods-ServoController/Pods-ServoController.debug.xcconfig"; sourceTree = "<group>"; };
+		B8BF871642B2AB9346A75685 /* Pods-ServoController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServoController.release.xcconfig"; path = "Target Support Files/Pods-ServoController/Pods-ServoController.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A6E4F2A2472AC100080642D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57CC894299E47B9F6BB650D5 /* Pods_ServoController.framework in Frameworks */,
+				9A6E4F462472B19E0080642D /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		928E205F06692429C7B3A80C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF1C39795F37263A989C8A6B /* Pods-ServoController.debug.xcconfig */,
+				B8BF871642B2AB9346A75685 /* Pods-ServoController.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9A6E4F242472AC100080642D = {
+			isa = PBXGroup;
+			children = (
+				9A6E4F2F2472AC100080642D /* ServoController */,
+				9A6E4F2E2472AC100080642D /* Products */,
+				928E205F06692429C7B3A80C /* Pods */,
+				B48F9139FD0233E3B53B3984 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A6E4F2E2472AC100080642D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E4F2D2472AC100080642D /* ServoController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A6E4F2F2472AC100080642D /* ServoController */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E4F442472B19E0080642D /* ServoController.entitlements */,
+				9A6E4F302472AC100080642D /* AppDelegate.swift */,
+				9A6E4F322472AC100080642D /* SceneDelegate.swift */,
+				9A6E4F342472AC100080642D /* ContentView.swift */,
+				9A6E4F362472AC120080642D /* Assets.xcassets */,
+				9A6E4F3B2472AC120080642D /* LaunchScreen.storyboard */,
+				9A6E4F3E2472AC120080642D /* Info.plist */,
+				9A6E4F382472AC120080642D /* Preview Content */,
+				9A00CFF42472DB1700DA2512 /* StepperViewModel.swift */,
+			);
+			path = ServoController;
+			sourceTree = "<group>";
+		};
+		9A6E4F382472AC120080642D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E4F392472AC120080642D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B48F9139FD0233E3B53B3984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E4F452472B19E0080642D /* NetworkExtension.framework */,
+				5ED609F65A8C8A7A75165720 /* Pods_ServoController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A6E4F2C2472AC100080642D /* ServoController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A6E4F412472AC120080642D /* Build configuration list for PBXNativeTarget "ServoController" */;
+			buildPhases = (
+				441C5ED8724E3F038952F86E /* [CP] Check Pods Manifest.lock */,
+				9A6E4F292472AC100080642D /* Sources */,
+				9A6E4F2A2472AC100080642D /* Frameworks */,
+				9A6E4F2B2472AC100080642D /* Resources */,
+				7C94C7937D48EFBA23FC40D6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServoController;
+			productName = ServoController;
+			productReference = 9A6E4F2D2472AC100080642D /* ServoController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A6E4F252472AC100080642D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Julian Beck";
+				TargetAttributes = {
+					9A6E4F2C2472AC100080642D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 9A6E4F282472AC100080642D /* Build configuration list for PBXProject "ServoController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A6E4F242472AC100080642D;
+			productRefGroup = 9A6E4F2E2472AC100080642D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A6E4F2C2472AC100080642D /* ServoController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A6E4F2B2472AC100080642D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6E4F3D2472AC120080642D /* LaunchScreen.storyboard in Resources */,
+				9A6E4F3A2472AC120080642D /* Preview Assets.xcassets in Resources */,
+				9A6E4F372472AC120080642D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		441C5ED8724E3F038952F86E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ServoController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C94C7937D48EFBA23FC40D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ServoController/Pods-ServoController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ServoController/Pods-ServoController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ServoController/Pods-ServoController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A6E4F292472AC100080642D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6E4F312472AC100080642D /* AppDelegate.swift in Sources */,
+				9A6E4F332472AC100080642D /* SceneDelegate.swift in Sources */,
+				9A00CFF52472DB1700DA2512 /* StepperViewModel.swift in Sources */,
+				9A6E4F352472AC100080642D /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9A6E4F3B2472AC120080642D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A6E4F3C2472AC120080642D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A6E4F3F2472AC120080642D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A6E4F402472AC120080642D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A6E4F422472AC120080642D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF1C39795F37263A989C8A6B /* Pods-ServoController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ServoController/ServoController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ServoController/Preview Content\"";
+				DEVELOPMENT_TEAM = VB9VC9U9AV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ServoController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianbeck.ServoController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A6E4F432472AC120080642D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8BF871642B2AB9346A75685 /* Pods-ServoController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ServoController/ServoController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ServoController/Preview Content\"";
+				DEVELOPMENT_TEAM = VB9VC9U9AV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ServoController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianbeck.ServoController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A6E4F282472AC100080642D /* Build configuration list for PBXProject "ServoController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A6E4F3F2472AC120080642D /* Debug */,
+				9A6E4F402472AC120080642D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A6E4F412472AC120080642D /* Build configuration list for PBXNativeTarget "ServoController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A6E4F422472AC120080642D /* Debug */,
+				9A6E4F432472AC120080642D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A6E4F252472AC100080642D /* Project object */;
+}

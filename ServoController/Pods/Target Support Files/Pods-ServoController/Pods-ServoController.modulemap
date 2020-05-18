@@ -1,0 +1,6 @@
+framework module Pods_ServoController {
+  umbrella header "Pods-ServoController-umbrella.h"
+
+  export *
+  module * { export * }
+}
