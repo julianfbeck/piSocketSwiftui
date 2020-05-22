@@ -54,7 +54,7 @@ final class StepperViewModel: ObservableObject {
     }
     
     private func connect() {
-        self.manager = SocketManager(socketURL: URL(string: "http://127.0.0.1:5000/")!, config: [.log(false), .compress, .forceWebsockets(false)])
+        self.manager = SocketManager(socketURL: URL(string: "http://192.168.178.94:5000/")!, config: [.log(false), .compress, .forceWebsockets(false)])
         
         self.socket = manager.socket(forNamespace: "/test")
         
