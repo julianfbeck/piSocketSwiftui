@@ -59,7 +59,7 @@ def move_stepps(steps, speed=-1):
                 
                 #interrupt
                 if stop: 
-                    GPIO.cleanup()
+                    #GPIO.cleanup()
                     return 
 
             #save which step was the last one
@@ -80,7 +80,7 @@ def move_stepps(steps, speed=-1):
                 if(total_step <= 0):
                     total_step = 50
                 if stop: 
-                    GPIO.cleanup()
+                    #GPIO.cleanup()
                     return 
             last_step -= 1
             if last_step == 0 : 
@@ -90,7 +90,7 @@ def move_stepps(steps, speed=-1):
                 GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
             time.sleep(60/(last_speed*100))
 
-    GPIO.cleanup()
+    #GPIO.cleanup()
     print("done")
 
 
