@@ -97,7 +97,7 @@ def index():
 @socketio.on('step', namespace='/test')
 def steps_handler(new_steps):
     print(new_steps)
-    move_stepps(new_steps, totalSpeed)
+    move_stepps(new_steps)
     emit('totalPosition', total_step, broadcast=True)
 
 @socketio.on('speed', namespace='/test')
