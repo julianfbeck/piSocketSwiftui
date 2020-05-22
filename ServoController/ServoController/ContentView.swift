@@ -53,7 +53,7 @@ struct ContentView: View {
                     HStack {
                         Text("Number of Steps")
                         Spacer()
-                        TextField("0", text: $numberOfSteps).keyboardType(.numberPad).multilineTextAlignment(.trailing)
+                        TextField("0", text: $numberOfSteps).keyboardType(.decimalPad).multilineTextAlignment(.trailing)
                         
                     }
                     HStack {
