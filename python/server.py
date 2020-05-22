@@ -70,7 +70,7 @@ def move_stepps(steps):
 
         for i in range(steps):
             total_step += 1
-            emit('totalPosition', total_step, broadcast=True)
+            #emit('totalPosition', total_step, broadcast=True)
             if stop: 
                 #GPIO.cleanup()
                 return 
@@ -95,7 +95,7 @@ def move_stepps(steps):
         #     time.sleep(last_speed)
         for i in range(abs(steps)):
             total_step += 1
-            emit('totalPosition', total_step, broadcast=True)
+            #emit('totalPosition', total_step, broadcast=True)
             if stop: 
                 #GPIO.cleanup()
                 return 
