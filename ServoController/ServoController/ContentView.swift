@@ -10,9 +10,10 @@ import SwiftUI
 import SocketIO
 struct ContentView: View {
     @ObservedObject var model = StepperViewModel()
-
- 
     
+    @State var numberOfSteps = "0"
+    
+    @State var direction: Direction = .right
     
     
     
@@ -31,7 +32,7 @@ struct ContentView: View {
                             Text("Total Steps").font(.caption).bold()
                         }
                         Spacer()
-                        VStack {                            Text("180°").font(.title).bold()
+                        VStack {                            Text("\((Int(Double(self.model.totalSteps) * 7.2)) % 360)°").font(.title).bold()
                             Spacer()
                             Text("Position").font(.caption).bold()
                             
@@ -40,9 +41,9 @@ struct ContentView: View {
                 }.listRowBackground(Color("systemBackground"))
                 Section {
                     Stepper(onIncrement: {
-                        self.model.step(direction: .right)
+                        self.model.step(direction: .right, steps: 1)
                     }, onDecrement: {
-                        self.model.step(direction: .left)
+                        self.model.step(direction: .left, steps: 1)
                     }) {
                         Text("Step")
                     }
@@ -50,15 +51,41 @@ struct ContentView: View {
                 
                 Section {
                     HStack {
+                        Text("Number of Steps")
+                        Spacer()
+                        TextField("0", text: $numberOfSteps).keyboardType(.numberPad).multilineTextAlignment(.trailing)
+                        
+                    }
+                    HStack {
                         Text("Speed").padding(.trailing)
                         Slider(value: Binding(
                             get: {
                                 self.model.totalSpeed
-                            },
+                        },
                             set: {(newValue) in
                                 self.model.setSpeed(speed: newValue)
-                            }
-                        ), in: 0...100, step: 0.1)
+                        }
+                        ), in: 0.001...3.0, step: 0.2)
+                    }
+                    HStack() {
+                        
+                        
+                        Text("Direction")
+                        
+                        Spacer(minLength: 48)
+                        
+                        Picker("Directon", selection: $direction) {
+                             ForEach(Direction.allCases, id: \.self) {
+                                   Text($0.rawValue)
+                               }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                    
+                    Button(action: {
+                        self.model.step(direction: self.direction, steps: Int(self.numberOfSteps)!)
+                    }) {
+                        Text("GO!")
                     }
                 }
                 Button(action: {
@@ -66,10 +93,31 @@ struct ContentView: View {
                 }) {
                     Text("Reset Position")
                 }
+                
+                Section {
+                    if model.isStopped {
+                        Button(action: {
+                            self.model.go()
+                        }) {
+                            Text("Resume Stepper").foregroundColor(.green)
+                                .bold()
+                        }
+                    } else {
+                        Button(action: {
+                            self.model.stop()
+                        }) {
+                            Text("Stop Stepper").foregroundColor(.red)
+                                .bold()
+                        }
+                    }
+
+                }
+
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Stepper")
+            
         }
     }
     
