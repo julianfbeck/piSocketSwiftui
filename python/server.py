@@ -30,9 +30,11 @@ halfstep_seq = [
 
 def setup():
     GPIO.setmode(GPIO.BCM)
+    global control_pins
     for pin in control_pins:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
+
 def move_stepps(steps, speed=-1):
     global last_step
     global control_pins
