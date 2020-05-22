@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import RPi.GPIO as GPIO
-import time
+import time, threading
 
 
 app = Flask(__name__)
@@ -33,6 +33,10 @@ def setup():
     for pin in control_pins:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
+
+def emit__change(steps):
+    emit('totalPosition', total_step, broadcast=True)
+
 
 def move_stepps(steps):
     global last_step
@@ -71,6 +75,8 @@ def move_stepps(steps):
         for i in range(steps):
             total_step += 1
             #emit('totalPosition', total_step, broadcast=True)
+            thread = threading.Thread(target=emit__change, args=(total_step))
+            thread.start()
             if stop: 
                 #GPIO.cleanup()
                 return 
