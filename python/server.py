@@ -33,69 +33,6 @@ def setup():
     for pin in control_pins:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@socketio.on('step', namespace='/test')
-def steps_handler(new_steps):
-    print(new_steps)
-    global total_steps
-    #total_steps += new_steps
-    move_stepps(new_steps, 60)
-    emit('totalPosition', total_steps, broadcast=True)
-
-@socketio.on('speed', namespace='/test')
-def speed_handler(message):
-    print(message)
-    global totalSpeed
-    totalSpeed  = message
-    emit('totalSpeed', totalSpeed, broadcast=True)
-
-@socketio.on('resetPosition', namespace='/test')
-def reset_Handler(message):
-    print(message)
-    global total_steps
-    total_steps = 0
-    emit('totalPosition', total_steps, broadcast=True)
-
-@socketio.on('stop', namespace='/test')
-def reset_Handler(message):
-    print(message)
-    global stop
-    stop = True
-    emit('stop', 1, broadcast=True)
-
-@socketio.on('go', namespace='/test')
-def reset_Handler(message):
-    print(message)
-    global stop
-    stop = False
-    emit('stop', 0, broadcast=True)
-
-@socketio.on('pull', namespace='/test')
-def reset_Handler(message):
-    emit('totalPosition', total_steps)
-    emit('totalSpeed', totalSpeed)
-
-@socketio.on('connect', namespace='/test')
-def test_connect():
-    print("ClientConnected")
-
-
-
-
-@socketio.on('disconnect', namespace='/test')
-def test_disconnect():
-    print('Client disconnected')
-
-if __name__ == '__main__':
-    setup()
-    socketio.run(app, host='0.0.0.0', port=8080)
-
-
-
 def move_stepps(steps, speed=-1):
     global last_step
     global control_pins
@@ -151,6 +88,70 @@ def move_stepps(steps, speed=-1):
 
     GPIO.cleanup()
     print("done")
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@socketio.on('step', namespace='/test')
+def steps_handler(new_steps):
+    print(new_steps)
+    global total_step
+    #total_step += new_steps
+    move_stepps(new_steps, 60)
+    emit('totalPosition', total_step, broadcast=True)
+
+@socketio.on('speed', namespace='/test')
+def speed_handler(message):
+    print(message)
+    global totalSpeed
+    totalSpeed  = message
+    emit('totalSpeed', totalSpeed, broadcast=True)
+
+@socketio.on('resetPosition', namespace='/test')
+def reset_Handler(message):
+    print(message)
+    global total_step
+    total_step = 0
+    emit('totalPosition', total_step, broadcast=True)
+
+@socketio.on('stop', namespace='/test')
+def reset_Handler(message):
+    print(message)
+    global stop
+    stop = True
+    emit('stop', 1, broadcast=True)
+
+@socketio.on('go', namespace='/test')
+def reset_Handler(message):
+    print(message)
+    global stop
+    stop = False
+    emit('stop', 0, broadcast=True)
+
+@socketio.on('pull', namespace='/test')
+def reset_Handler(message):
+    emit('totalPosition', total_step)
+    emit('totalSpeed', totalSpeed)
+
+@socketio.on('connect', namespace='/test')
+def test_connect():
+    print("ClientConnected")
+
+
+
+
+@socketio.on('disconnect', namespace='/test')
+def test_disconnect():
+    print('Client disconnected')
+
+if __name__ == '__main__':
+    setup()
+    socketio.run(app, host='0.0.0.0', port=8080)
+
+
+
 
 def move_grad(grad, speed):
     #calculate steps to move 
