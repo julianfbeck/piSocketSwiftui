@@ -67,13 +67,16 @@ def move_stepps(steps):
             
         #     # #speed is in 1/min => (1min) splittet in halfsteps for a ration (=> 100) per roation
         #     # time.sleep(last_speed)
+
         for i in range(steps):
             total_step += 1
-            for i in range(50):
-                for halfstep in range(8):
-                    for pin in range(4):
+            if stop: 
+                #GPIO.cleanup()
+                return 
+            for halfstep in range(8):
+                for pin in range(4):
                     GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
-                    time.sleep(0.001)
+                time.sleep(totalSpeed)
     else:
         for halfstep in range(abs(steps)*2):
             if halfstep%2 == 0:
