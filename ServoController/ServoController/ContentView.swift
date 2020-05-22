@@ -32,7 +32,7 @@ struct ContentView: View {
                             Text("Total Steps").font(.caption).bold()
                         }
                         Spacer()
-                        VStack {                            Text("\((Int(Double(self.model.totalSteps) * 7.2)) % 360)°").font(.title).bold()
+                        VStack {                            Text("\((Int(Double(self.model.totalSteps) * 1.8)) % 360)°").font(.title).bold()
                             Spacer()
                             Text("Position").font(.caption).bold()
                             

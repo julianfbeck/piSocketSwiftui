@@ -50,8 +50,6 @@ def move_stepps(steps):
 
                 #count total steps
                 total_step += 1
-                if(total_step >= 50):
-                    total_step = 0
                 
                 #interrupt
                 if stop: 
@@ -73,12 +71,11 @@ def move_stepps(steps):
         for halfstep in range(abs(steps)*2):
             if halfstep%2 == 0:
                 total_step -= 1
-                if(total_step <= 0):
-                    total_step = 50
                 if stop: 
                     #GPIO.cleanup()
                     return 
             last_step -= 1
+            
             if last_step == 0 : 
                 last_step = 7
             GPIO.output(control_pins, halfstep_seq[last_step])
@@ -87,7 +84,6 @@ def move_stepps(steps):
             time.sleep(last_speed)
 
     #GPIO.cleanup()
-    print("done")
 
 
 @app.route('/')
