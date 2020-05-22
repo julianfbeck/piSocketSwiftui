@@ -75,7 +75,8 @@ def move_stepps(steps):
                 if last_step == 8 : 
                     last_step = 0
 
-                GPIO.output(control_pins, halfstep_seq[last_step])
+                for pin in range(4):
+                     GPIO.output(control_pins[pin], halfstep_seq[last_step][pin])
                 time.sleep(last_speed)
     else:
         for halfstep in range(abs(steps)*2):
