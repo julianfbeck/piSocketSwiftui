@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-totalSpeed = 0
+totalSpeed = 0.001
 
 stop = False
 last_step = 0
@@ -78,20 +78,29 @@ def move_stepps(steps):
                     GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
                 time.sleep(totalSpeed)
     else:
-        for halfstep in range(abs(steps)*2):
-            if halfstep%2 == 0:
-                total_step -= 1
-                if stop: 
-                    #GPIO.cleanup()
-                    return 
-            last_step -= 1
+        # for halfstep in range(abs(steps)*2):
+        #     if halfstep%2 == 0:
+        #         total_step -= 1
+        #         if stop: 
+        #             #GPIO.cleanup()
+        #             return 
+        #     last_step -= 1
             
-            if last_step == 0 : 
-                last_step = 7
-            GPIO.output(control_pins, halfstep_seq[last_step])
-            #for pin in range(4):
-            #    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
-            time.sleep(last_speed)
+        #     if last_step == 0 : 
+        #         last_step = 7
+        #     GPIO.output(control_pins, halfstep_seq[last_step])
+        #     #for pin in range(4):
+        #     #    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
+        #     time.sleep(last_speed)
+        for i in range(steps):
+            total_step += 1
+            if stop: 
+                #GPIO.cleanup()
+                return 
+            for halfstep in range(8):
+                for pin in range(4):
+                    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
+                time.sleep(totalSpeed)
 
     #GPIO.cleanup()
 
