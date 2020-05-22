@@ -43,30 +43,40 @@ def move_stepps(steps):
 
     #check direction
     if(steps > 0):
-        for halfstep in range(steps*2):
+        # for halfstep in range(steps*2):
 
-            #check if step ist a full step
-            if halfstep%2 == 0:
+        #     # #check if step ist a full step
+        #     # if halfstep%2 == 0:
 
-                #count total steps
-                total_step += 1
+        #     #     #count total steps
+        #     #     total_step += 1
                 
-                #interrupt
-                if stop: 
-                    #GPIO.cleanup()
-                    return 
+        #     #     #interrupt
+        #     #     if stop: 
+        #     #         #GPIO.cleanup()
+        #     #         return 
 
-            #save which step was the last one
-            last_step += 1
-            if last_step == 8 : 
-                last_step = 0
+        #     # #save which step was the last one
+        #     # last_step += 1
+        #     # if last_step == 8 : 
+        #     #     last_step = 0
 
-            #for pin in range(4):
-            #    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
-            GPIO.output(control_pins, halfstep_seq[last_step])
+        #     # #for pin in range(4):
+        #     # #    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
+        #     # GPIO.output(control_pins, halfstep_seq[last_step])
             
-            #speed is in 1/min => (1min) splittet in halfsteps for a ration (=> 100) per roation
-            time.sleep(last_speed)
+        #     # #speed is in 1/min => (1min) splittet in halfsteps for a ration (=> 100) per roation
+        #     # time.sleep(last_speed)
+        for i in range(steps):
+            total_step += 1
+            for halfstep in range(8):
+                last_step += 1
+
+                if last_step == 8 : 
+                    last_step = 0
+
+                GPIO.output(control_pins, halfstep_seq[last_step])
+                time.sleep(last_speed)
     else:
         for halfstep in range(abs(steps)*2):
             if halfstep%2 == 0:
