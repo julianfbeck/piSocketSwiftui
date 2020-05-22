@@ -34,7 +34,7 @@ def setup():
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
 
-def emit__change(steps):
+def emit__change():
     emit('totalPosition', total_step, broadcast=True)
 
 
@@ -75,7 +75,7 @@ def move_stepps(steps):
         for i in range(steps):
             total_step += 1
             #emit('totalPosition', total_step, broadcast=True)
-            thread = threading.Thread(target=emit__change, args=(total_step))
+            thread = threading.Thread(target=emit__change)
             thread.start()
             if stop: 
                 #GPIO.cleanup()
