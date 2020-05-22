@@ -34,16 +34,12 @@ def setup():
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
 
-def move_stepps(steps, speed=-1):
+def move_stepps(steps):
     global last_step
     global control_pins
     global last_speed
     global total_step
     global stop
-
-    #check if new speed is set
-    if(speed > 0):
-        last_speed = speed
 
     #check direction
     if(steps > 0):
@@ -72,7 +68,7 @@ def move_stepps(steps, speed=-1):
             GPIO.output(control_pins, halfstep_seq[last_step])
             
             #speed is in 1/min => (1min) splittet in halfsteps for a ration (=> 100) per roation
-            time.sleep(60/(last_speed*100))
+            time.sleep(last_speed)
     else:
         for halfstep in range(abs(steps)*2):
             if halfstep%2 == 0:
@@ -88,7 +84,7 @@ def move_stepps(steps, speed=-1):
             GPIO.output(control_pins, halfstep_seq[last_step])
             #for pin in range(4):
             #    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
-            time.sleep(60/(last_speed*100))
+            time.sleep(last_speed)
 
     #GPIO.cleanup()
     print("done")
@@ -101,16 +97,14 @@ def index():
 @socketio.on('step', namespace='/test')
 def steps_handler(new_steps):
     print(new_steps)
-    global total_step
-    #total_step += new_steps
-    move_stepps(new_steps, 60)
+    move_stepps(new_steps, totalSpeed)
     emit('totalPosition', total_step, broadcast=True)
 
 @socketio.on('speed', namespace='/test')
 def speed_handler(message):
     print(message)
     global totalSpeed
-    totalSpeed  = message
+    totalSpeed = message
     emit('totalSpeed', totalSpeed, broadcast=True)
 
 @socketio.on('resetPosition', namespace='/test')
