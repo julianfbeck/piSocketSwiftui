@@ -34,8 +34,6 @@ def setup():
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
 
-def emit__change():
-    emit('totalPosition', total_step, broadcast=True)
 
 
 def move_stepps(steps):
@@ -74,9 +72,6 @@ def move_stepps(steps):
 
         for i in range(steps):
             total_step += 1
-            #emit('totalPosition', total_step, broadcast=True)
-            thread = threading.Thread(target=emit__change)
-            thread.start()
             if stop: 
                 #GPIO.cleanup()
                 return 
@@ -121,6 +116,7 @@ def index():
 def steps_handler(new_steps):
     print(new_steps)
     move_stepps(new_steps)
+    emit('totalPosition', total_step, broadcast=True)
 
 @socketio.on('speed', namespace='/test')
 def speed_handler(message):
