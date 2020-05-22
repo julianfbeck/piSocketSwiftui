@@ -101,7 +101,7 @@ def move_stepps(steps):
                 return 
             for halfstep in range(8):
                 for pin in range(4):
-                    GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
+                    GPIO.output(control_pins[pin], halfstep_seq[-halfstep][pin])
                 time.sleep(totalSpeed)
 
     #GPIO.cleanup()
