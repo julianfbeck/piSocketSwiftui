@@ -28,12 +28,13 @@ halfstep_seq = [
     [1,0,0,1]
 ]
 
-def setup():
-    GPIO.setmode(GPIO.BCM)
-    global control_pins
+GPIO.setmode(GPIO.BCM)
     for pin in control_pins:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, 0)
+
+def setup():
+    pass
 
 def move_stepps(steps, speed=-1):
     global last_step
