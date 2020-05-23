@@ -53,7 +53,10 @@ struct ContentView: View {
                     HStack {
                         Text("Number of Steps")
                         Spacer()
-                        TextField("0", text: $numberOfSteps).keyboardType(.decimalPad).multilineTextAlignment(.trailing)
+                        TextField("0", text: $numberOfSteps).keyboardType(.decimalPad).multilineTextAlignment(.trailing).onTapGesture {
+                                   self.endEditing(true)
+                                   
+                                }
                         
                     }
                     HStack {
@@ -65,7 +68,7 @@ struct ContentView: View {
                             set: {(newValue) in
                                 self.model.setSpeed(speed: newValue)
                         }
-                        ), in: 0.001...3.0, step: 0.2)
+                        ), in: 0.001...0.1, step: 0.001)
                     }
                     HStack() {
                         
@@ -130,5 +133,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension View {
+    func endEditing(_ force: Bool) {
+        UIApplication.shared.windows.forEach { $0.endEditing(force)}
     }
 }

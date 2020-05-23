@@ -38,6 +38,7 @@ final class StepperViewModel: ObservableObject {
     }
     
     public func setSpeed(speed: Double) {
+        self.totalSpeed = speed
         socket.emit("speed", speed)
     }
     
@@ -70,10 +71,10 @@ final class StepperViewModel: ObservableObject {
         }
         
         socket.on("totalSpeed") { data, ack in
-            print("totalSpeed")
-            if let speed = data[0] as? Double {
-                self.totalSpeed = speed
-            }
+//            print("totalSpeed")
+//            if let speed = data[0] as? Double {
+//                self.totalSpeed = speed
+//            }
         }
         
         socket.on("stop") { data, ack in
